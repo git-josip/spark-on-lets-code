@@ -20,7 +20,11 @@ object Boot extends App with ApiHttpService with BootHelper {
   override implicit val twitterAuth: TwitterAuth = createTwitterAuth
   override implicit val twitterStreaming: TwitterInputDStream = TwitterStreamingServices.createTwitterStream()
 
-  Http().bindAndHandle(routes, interface, port)
+  Http().bindAndHandle(
+    handler = routes,
+    interface = interface,
+    port = port
+  )
 }
 
 trait BootHelper {
@@ -29,7 +33,7 @@ trait BootHelper {
       .setMaster(sparkMaster)
       .setAppName(sparkAppName)
       .setSparkHome(sparkHome)
-      .setJars(sparkOnJars)
+//      .setJars(sparkOnJars)
       .set("spark.executor.memory", sparkExecutorMemory.toString)
       .set("spark.cores.max", sparkCoresMax.toString)
       .set("spark.cassandra.connection.host", cassandraHosts)

@@ -7,7 +7,7 @@ object V {
   val akka = "2.3.12"
   val akkaStreams = "1.0"
   val cassandraSpark = "1.4.0-M2"
-  val scala = "2.11.6"
+  val scala = "2.11.7"
   val spark = "1.4.1"
   val sprayJson = "1.3.2"
   val twitter4j = "4.0.3"

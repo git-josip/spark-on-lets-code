@@ -16,7 +16,7 @@ trait CommonConfig extends BaseConfig {
   val sparkOnFilters = sparkOnConfig.getStringList("filters").asScala.toSet
   val windowSizeSeconds = sparkOnConfig.getInt("windowSizeSeconds")
   val cassandraCQLPath = sparkOnConfig.getString("cassandraCQLPath")
-  val sparkOnJars = sparkOnConfig.getStringList("spark.jars").asScala.toSeq
+//  val sparkOnJars = sparkOnConfig.getStringList("spark.jars").asScala.toSeq
   val dateFormat = sparkOnConfig.getString("dateFormat")
   val dateFormatSplitter = sparkOnConfig.getString("dateFormatSplitter")
 
